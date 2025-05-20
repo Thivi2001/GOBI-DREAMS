@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="site-page">
+
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="services.html">Our Services</a>
+      <a href="external.html">External Photographers</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <span id="admin-nav"></span>
+    </nav>
+    <div class="studio-name">Gobi Dreams</div>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <h2>Our Services</h2>
+    <div id="services-container">
+      <!-- Services will be dynamically loaded here -->
+    </div>
+  </section>
+
+  <!-- Booking Popup -->
+  <div id="booking-popup" class="popup hidden">
+    <div class="popup-content">
+      <h3>Booking Details</h3><br>
+      <p id="booked-service"></p>
+      <p id="service-amount"></p><br>
+      <label for="additional-service">Add Additional Service:</label>
+      <select id="additional-service">
+        <option value="">Select a service</option>
+      </select><br><br>
+      <!-- Date selection for booking -->
+<label for="booking-date">Select Booking Date:</label>
+<input type="date" id="booking-date" required><br><br>
+
+      <label for="external-photographer">Select External Photographer (Optional):</label>
+      <select id="external-photographer">
+        <option value="">Select a photographer</option>
+      </select><br><br>
+      <p id="total-amount"></p><br>
+      <div class="popup-buttons">
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="closePopup1()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment Popup -->
+  <div id="payment-popup" class="popup hidden">
+    <div class="popup-content">
+      <h3>Payment Gateway</h3>
+      <form id="payment-form">
+        <input type="text" id="card-name" placeholder="Name on Card" required>
+        <input type="text" id="card-number" placeholder="Card Number" required>
+        <input type="text" id="expiry-date" placeholder="Expiry Date (MM/YY)" required>
+        <input type="text" id="cvv" placeholder="CVV" required>
+        <div class="popup-buttons">
+          <button type="button" onclick="processPayment()">Pay Now</button>
+          <button type="button" onclick="closePopup2()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    Copyright © 2025 Gobi Dreams Photography //
+    All Rights Reserved. Any use of images without permission is prohibited.
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

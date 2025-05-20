@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gobi Dreams - Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="site-page" onload="loadProjects()">
+
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="services.html">Our Services</a>
+      <a href="external.html">External Photographers</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" >Logout</a>
+      <span id="admin-nav"></span>
+    </nav>
+    <div class="studio-name">Gobi Dreams</div>
+  </header>
+
+  <div class="welcome-text">
+    <h2>Hello!</h2>
+    <br>
+    <h2>Welcome to Gobi Dreams Photography</h2>
+  </div>
+
+  <!-- Image Slider -->
+  <section class="slider">
+    <div class="slides">
+      <img src="images/photo1.jpg" alt="Slide 1">
+      <img src="images/photo2.jpg" alt="Slide 2">
+      <img src="images/photo3.jpg" alt="Slide 3">
+      <img src="images/photo4.jpg" alt="Slide 4">
+      <img src="images/photo5.jpg" alt="Slide 5">
+      <img src="images/photo1.jpg" alt="Slide 1">
+      <img src="images/photo2.jpg" alt="Slide 2">
+      <img src="images/photo3.jpg" alt="Slide 3">
+      <img src="images/photo4.jpg" alt="Slide 4">
+      <img src="images/photo5.jpg" alt="Slide 5">
+    </div>
+  </section>
+
+  <!-- Our Projects -->
+  <section class="projects-section">
+    <h2>Our Projects</h2>
+
+    <!-- Project Display -->
+    <div id="project-container" class="project-grid"></div>
+
+    <!-- Admin Project Add Form -->
+    <div id="admin-form">
+      <h3>Add New Project</h3>
+      <input type="text" id="projectName" placeholder="Project Name">
+      <input type="text" id="userName" placeholder="User Name">
+      <input type="file" id="imageFile" accept="image/*">
+      <button onclick="addProject()">Add Project</button>
+    </div>
+
+    <!-- Admin Orders Section -->
+    <div id="admin-orders" style="display: none;">
+      <h2>Orders</h2>
+      <div id="orders-container"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    Copyright © 2025 Gobi Dreams Photography //
+    All Rights Reserved. Any use of images without permission is prohibited.
+  </footer>
+
+  <!-- JavaScript file -->
+  <script src="js/script.js">
+  </script>
+</body>
+
+</html>

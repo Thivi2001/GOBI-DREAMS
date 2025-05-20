@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup - Photography Website</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<!-- signup.html -->
+<body class="form-page">
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form onsubmit="signup(); return false;">
+      <input type="text" id="signup-name" placeholder="Full Name" required>
+      <input type="email" id="signup-email" placeholder="Email Address" required>
+      <input type="password" id="signup-password" placeholder="Password" required>
+      <input type="text" id="signup-phone" placeholder="Phone Number" required>
+      <input type="text" id="signup-address" placeholder="Address" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Log In</a></p>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

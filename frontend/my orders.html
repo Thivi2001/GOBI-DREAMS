@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="site-page">
+
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="services.html">Our Services</a>
+      <a href="external.html">External Photographers</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <span id="my-orders-nav"></span>
+      <span id="admin-nav"></span>
+    </nav>
+    <div class="studio-name">Gobi Dreams</div>
+  </header>
+
+  <!-- My Orders Section -->
+  <section class="orders-section">
+    <h2>My Orders</h2>
+    <div id="orders-content">
+      <p>Loading your orders...</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    Copyright © 2025 Gobi Dreams Photography //
+    All Rights Reserved. Any use of images without permission is prohibited.
+  </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const token = localStorage.getItem('token');
+    const isAdmin = localStorage.getItem('isAdmin') === 'true';
+    const myOrdersNav = document.getElementById('my-orders-nav');
+    const ordersSection = document.querySelector('.orders-section');
+    const ordersContent = document.getElementById('orders-content');
+
+    // Show "My orders" only if user is logged in and not admin
+    if (token && !isAdmin && myOrdersNav) {
+        const ordersLink = document.createElement('a');
+        ordersLink.href = 'my orders.html';
+        ordersLink.textContent = 'My orders';
+        myOrdersNav.parentNode.insertBefore(ordersLink, myOrdersNav);
+    }
+
+    // Hide orders section for admin
+    if (isAdmin && ordersSection) {
+        ordersSection.style.display = 'none';
+    }
+
+    // Admin nav logic
+    if (isAdmin) {
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            if (!navbar.querySelector('#booking-report-link')) {
+                const reportLink = document.createElement('a');
+                reportLink.href = '#';
+                reportLink.id = 'booking-report-link';
+                reportLink.textContent = 'Booking Report';
+                navbar.appendChild(reportLink);
+            }
+        }
+    }
+
+    // Add click handler for booking report link
+    const reportLink = document.getElementById('booking-report-link');
+    if (reportLink) {
+        reportLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('http://localhost:5000/api/report/bookings-report', '_blank');
+        });
+    }
+
+    // Only fetch and show orders for non-admin users
+    if (!token) {
+        ordersContent.innerHTML = '<p>Please <a href="login.html">log in</a> to view your orders.</p>';
+        return;
+    }
+    if (isAdmin) {
+        return;
+    }
+
+    // Fetch user's orders
+    fetch('http://localhost:5000/api/orders/my', {
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+    })
+    .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch orders');
+        return res.json();
+    })
+    .then(data => {
+        if (!data || data.length === 0) {
+            ordersContent.innerHTML = '<p>You have no orders yet.</p>';
+            return;
+        }
+        let html = '<table class="orders-table"><thead><tr><th>Order ID</th><th>Date</th><th>Status</th><th>Total</th></tr></thead><tbody>';
+        data.forEach(order => {
+            html += `<tr>
+                <td>${order.id || order._id}</td>
+                <td>${order.date ? new Date(order.date).toLocaleDateString() : ''}</td>
+                <td>${order.status || 'Pending'}</td>
+                <td>${order.total ? '₹' + order.total : ''}</td>
+            </tr>`;
+        });
+        html += '</tbody></table>';
+        ordersContent.innerHTML = html;
+    })
+    .catch(err => {
+        ordersContent.innerHTML = '<p>Error loading orders. Please try again later.</p>';
+    });
+});
+</script>
+</body>
+</html>

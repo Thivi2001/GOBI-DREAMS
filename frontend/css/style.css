@@ -1,0 +1,457 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body (form pages only,) */
+body.form-page {
+  font-family: Arial, sans-serif;
+  background: url('../images/bg5.jpg') no-repeat center center fixed; /* Set background image */
+  background-size: cover; /* Ensure the image covers the entire page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Body (home and other pages) */
+body.site-page {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #62cff4, #4b7ae7); /* Gradient effect */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Login/Signup Form Container */
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+}
+
+.form-container input {
+  width: 100% !important; /* Ensure all input fields take up the full width of the container */
+  padding: 10px; /* Add consistent padding */
+  margin: 8px 0; /* Add spacing between fields */
+  border: 1px solid #ccc; /* Add a consistent border */
+  border-radius: 5px; /* Add rounded corners */
+  box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2f80ed;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.form-container p {
+  margin-top: 15px;
+}
+
+.form-container a {
+  color: #2f80ed;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #f0f0f0;
+  flex-wrap: wrap;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.studio-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  color: #2f0d68;
+}
+
+.slider {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
+.slides {
+  display: flex;
+  width: calc(200%); /* because we duplicated the images */
+  animation: scroll 20s linear infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* Projects Section */
+.projects-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#project-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 30px; /* Space between items */
+  justify-items: center; /* Center items horizontally */
+}
+
+.project-card {
+  width: 90%;
+  max-width: px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fafafa;
+  text-align: left;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.rating, .admin-controls {
+  margin-top: 10px;
+}
+
+input[type="text"], input[type="number"] {
+  width: 90%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #2f0d68;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #402080;
+}
+
+#admin-form {
+  margin-top: 30px;
+}
+
+/* Photographers Section */
+.photographers-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.photographers-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.photographers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 20px; /* Reduce the gap between items */
+  justify-items: center;
+}
+
+.photographer-card {
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.photographer-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+#admin-photographer-form {
+  margin-top: 30px;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.faq-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+}
+
+.faq-answer {
+  display: none; /* Initially hide the answer */
+  font-size: 16px;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* About Section */
+.about-section {
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.about-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+  display: block;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the section horizontally */
+  justify-content: center; /* Center the section vertically */
+  min-height: 80vh; /* Ensure the section takes up most of the viewport height */
+}
+
+.contact-section p,
+.contact-section .social-media {
+  text-align: left; /* Align the contents to the right */
+  width: 100%; /* Ensure the content spans the full width */
+  max-width: 800px;
+  line-height: 1.8; /* Optional: Limit the width of the content */
+}
+
+.social-media a {
+  display: flex;
+  align-items: center;
+  justify-content: left; /* Align icons and text to the right */
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px; /* Add space between the text and the icon */
+}
+
+/* Footer */
+.main-footer {
+  background-color: #2f0d68;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+.welcome-text {
+  padding: 30px; /* Add padding around the text */
+  margin-right: 40px ; /* Push the text to the right */
+  max-width: 800px; /* Optional: Limit the width of the text */
+  text-align: left; /* Align the text content to the right */
+}
+
+/* Services Section */
+.services-section {
+  padding: 40px 20px;
+}
+
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.service-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.service-card .service-description {
+  flex: 1;
+}
+
+.service-card button {
+  padding: 10px 20px;
+  background-color: #1a283b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.service-card button:hover {
+  background-color: #1e5bbf;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+}
+
+.popup-buttons {
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-buttons button:first-child {
+  background-color: #2f80ed;
+  color: white;
+}
+
+.popup-buttons button:last-child {
+  background-color: #ccc;
+}
+
+#admin-orders {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.order-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#bookings-table {
+  border-collapse: separate;
+  border-spacing: 0 0; /* row, column spacing (default 0) */
+}
+
+#bookings-table th,
+#bookings-table td {
+  padding: 10px 20px; /* top/bottom, left/right */
+}

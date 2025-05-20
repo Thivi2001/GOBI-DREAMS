@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>External Photographers</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="site-page" onload="loadPhotographers()">
+
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="services.html">Our Services</a>
+      <a href="external.html">External Photographers</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <span id="admin-nav"></span>
+    </nav>
+    <div class="studio-name">Gobi Dreams</div>
+  </header>
+
+  <!-- External Photographers Section -->
+  <section class="photographers-section">
+    <h2>External Photographers</h2>
+    <div id="photographers-container" class="photographers-grid"></div>
+
+    <!-- Admin Form for Adding Photographers -->
+    <div id="admin-photographer-form">
+      <h3>Add New Photographer</h3>
+      <input type="text" id="photographerName" placeholder="Photographer Name">
+       <input type="text" id="description" placeholder="Description">
+      <input type="file" id="photographerImage" accept="image/*">
+      <button onclick="addPhotographer()">Add Photographer</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    Copyright © 2025 Gobi Dreams Photography //
+    All Rights Reserved. Any use of images without permission is prohibited.
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
